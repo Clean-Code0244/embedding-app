@@ -18,9 +18,20 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: EmbeddingDatabase
     ports:
-      - "5432:5432"
+      - "5430:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "9090:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - db
 
 volumes:
   pgdata:

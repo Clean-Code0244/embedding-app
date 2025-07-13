@@ -64,6 +64,53 @@ DATABASE_URL=postgresql://postgres:postgres@db:5432/EmbeddingDatabase
 
 ---
 
+## Veritabanı Yönetimi — PgAdmin Kullanımı
+
+Proje Docker Compose ile PostgreSQL ve PgAdmin servislerini çalıştırmaktadır. Veritabanını görselleştirmek veya yönetmek için PgAdmin arayüzünü kullanabilirsiniz.
+
+### PgAdmin’e Erişim
+
+- PgAdmin web arayüzü `http://localhost:9090` adresinde çalışmaktadır.
+- Burada email kısmına : admin@admin.com ve
+- Parola kısmına : admin yazarak giriş yapabilirsiniz.
+
+### PostgreSQL Server Bağlantısı
+
+PgAdmin üzerinde yeni bir **Server** eklemek için:
+
+1. **General** sekmesinde:
+
+   - Name: `PostgresDB` (dilediğiniz isim olabilir)
+
+2. **Connection** sekmesinde şu bilgileri girin:
+
+   - **Host name/address:** `db`  
+     _(Docker Compose’daki PostgreSQL servisi adı, PgAdmin konteynerinden erişim için)_
+   - **Port:** `5432`
+   - **Maintenance database:** `EmbeddingDatabase`  
+     _(Docker Compose ortamında tanımladığınız veritabanı adı)_
+   - **Username:** `postgres`
+   - **Password:** `postgres`
+
+3. Ayarları kaydedin ve bağlanın.
+
+### Neden `db` kullanıyorum?
+
+Docker Compose, servisleri aynı özel ağda oluşturur. Bu nedenle, PgAdmin konteyneri PostgreSQL konteynerine `localhost` veya `127.0.0.1` üzerinden değil, servis adı olan `db` üzerinden erişir.
+
+### Özet
+
+| Ayar                | Değer                 |
+| ------------------- | --------------------- |
+| PgAdmin URL         | http://localhost:9090 |
+| PostgreSQL Hostname | db                    |
+| PostgreSQL Port     | 5432                  |
+| Veritabanı Adı      | EmbeddingDatabase     |
+| Kullanıcı Adı       | postgres              |
+| Parola              | postgres              |
+
+---
+
 ## 📌 Notlar
 
 - İlk çalıştırmada model indirileceğinden dolayı internet bağlantısı gerekir.
