@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+sentence-transformers
+torch
+gunicorn
+psycopg2-binary
+python-dotenv
