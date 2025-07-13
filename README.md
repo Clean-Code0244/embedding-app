@@ -18,7 +18,7 @@ Bu proje, Flask ve SentenceTransformers kullanarak girilen metinleri vektör hal
 GitHub üzerinden indirin:
 
 ```bash
-git clone https://github.com/kullaniciadi/embeddingapp.git
+git clone https://github.com/Clean-Code0244/embedding-app.git
 
 ```
 
