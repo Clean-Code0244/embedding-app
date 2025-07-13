@@ -54,10 +54,8 @@ http://localhost:5000
 
 ## 🗃️ Veritabanı Bilgileri
 
-Veritabanı bilgileri `.env` dosyasında saklanır. Örnek:
-
 ```
-DATABASE_URL=postgresql://postgres:postgres@db:5432/EmbeddingDatabase
+postgresql://postgres:postgres@db:5432/EmbeddingDatabase
 ```
 
 > Bu dosyada `db` ifadesi, docker-compose içerisindeki PostgreSQL servisinin adıdır.
